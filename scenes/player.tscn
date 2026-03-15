@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://k1nkfq6057if"]
+
+[ext_resource type="Script" uid="uid://c15ftm6f65nhm" path="res://scenes/rigidbody_character_controller.gd" id="1_vk1rd"]
+[ext_resource type="Script" uid="uid://ce8x6ifvs7bi1" path="res://components/actors/input_handler.gd" id="2_j4hul"]
+[ext_resource type="Script" uid="uid://b4bqd3fy5ot51" path="res://components/cameras/camera.gd" id="3_cam"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vk1rd"]
+
+[node name="Player" type="CharacterBody3D" unique_id=609492234]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+floor_snap_length = 0.2
+script = ExtResource("1_vk1rd")
+
+[node name="InputHandler" type="Node" parent="." unique_id=1376245668]
+unique_name_in_owner = true
+script = ExtResource("2_j4hul")
+metadata/_custom_type_script = "uid://ce8x6ifvs7bi1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1262486443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qhqgy")
+
+[node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D" unique_id=1538562860]
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1279722876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_vk1rd")
+
+[node name="CameraRoot" type="Node3D" parent="." unique_id=1161090005]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+script = ExtResource("3_cam")
+metadata/_custom_type_script = "uid://b4bqd3fy5ot51"
+
+[node name="FirstPersonCamera" type="Camera3D" parent="CameraRoot" unique_id=1678741329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22376001)
+current = true
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="CameraRoot" unique_id=2002976326]
+visible = false

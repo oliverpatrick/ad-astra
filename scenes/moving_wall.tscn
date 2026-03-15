@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://uqabu0hun3ks"]
+
+[ext_resource type="Material" uid="uid://3ub3li5nvjsw" path="res://materials/structure_material_orange.tres" id="1_nhlaj"]
+[ext_resource type="Script" uid="uid://darw60tmfcsrq" path="res://scenes/moving_wall.gd" id="1_s1tef"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsh8k"]
+size = Vector3(5, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nhlaj"]
+size = Vector3(5, 2, 1)
+
+[node name="MovingWall" type="AnimatableBody3D" unique_id=1830050672]
+script = ExtResource("1_s1tef")
+
+[node name="RigidBody3D" type="CollisionShape3D" parent="." unique_id=145661200]
+shape = SubResource("BoxShape3D_nsh8k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1829611046]
+material_override = ExtResource("1_nhlaj")
+mesh = SubResource("BoxMesh_nhlaj")

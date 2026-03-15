@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://vp84qlfle406"]
+
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://fonts/Ticketing.ttf" id="1_font"]
+[ext_resource type="Script" uid="uid://dydaaecfpvve8" path="res://scenes/main_menu/main_menu.gd" id="2_script"]
+
+[sub_resource type="Theme" id="Theme_menu"]
+Button/colors/font_color = Color(0.78, 0.78, 0.82, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 22
+Button/fonts/font = ExtResource("1_font")
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.05, 0.08, 0.12, 0.7)
+
+[node name="MainMenu" type="Control" unique_id=1870819850]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_menu")
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=747278467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="." unique_id=1081217209]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.35
+anchor_right = 0.9
+anchor_bottom = 0.45
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 72
+text = "AD ASTRA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuPanel" type="Panel" parent="." unique_id=247852917]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.467
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel" unique_id=486363384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="StartButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1397817628]
+layout_mode = 2
+text = "Start"
+alignment = 0
+
+[node name="MissionSelectButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2064620049]
+layout_mode = 2
+text = "MissionSelect"
+alignment = 0
+
+[node name="MatchmakingButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1868665707]
+layout_mode = 2
+text = "Matchmaking"
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1948105740]
+layout_mode = 2
+text = "Credits"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2003556114]
+layout_mode = 2
+text = "Settings"
+alignment = 0
+
+[node name="PlaceholderButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=749496914]
+layout_mode = 2
+text = "Placeholder
+"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="." unique_id=174567350]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.9
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
