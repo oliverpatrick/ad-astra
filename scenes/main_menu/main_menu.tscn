@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vp84qlfle406"]
 
-[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://fonts/Ticketing.ttf" id="1_font"]
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://assets/fonts/Ticketing.ttf" id="1_font"]
 [ext_resource type="Script" uid="uid://dydaaecfpvve8" path="res://scenes/main_menu/main_menu.gd" id="2_script"]
 
 [sub_resource type="Theme" id="Theme_menu"]
@@ -81,14 +81,21 @@ layout_mode = 2
 text = "Start"
 alignment = 0
 
-[node name="MissionSelectButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2064620049]
+[node name="SceneSelectButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2064620049]
 layout_mode = 2
-text = "MissionSelect"
+text = "Scene Select"
 alignment = 0
 
-[node name="MatchmakingButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1868665707]
+[node name="CoOpButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1868665707]
 layout_mode = 2
-text = "Matchmaking"
+text = "Co Op
+"
+alignment = 0
+
+[node name="OnlineButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=749496914]
+layout_mode = 2
+text = "Online
+"
 alignment = 0
 
 [node name="CreditsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1948105740]
@@ -99,12 +106,6 @@ alignment = 0
 [node name="SettingsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2003556114]
 layout_mode = 2
 text = "Settings"
-alignment = 0
-
-[node name="PlaceholderButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=749496914]
-layout_mode = 2
-text = "Placeholder
-"
 alignment = 0
 
 [node name="QuitButton" type="Button" parent="." unique_id=174567350]
@@ -118,4 +119,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
+[connection signal="pressed" from="MenuPanel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/SceneSelectButton" to="." method="_on_scene_select_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

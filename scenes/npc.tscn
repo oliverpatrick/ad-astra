@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gho5scx1ax3s"]
 
 [ext_resource type="Script" uid="uid://cmbc8gydwkjmb" path="res://scenes/npc.gd" id="1_abqhh"]
-[ext_resource type="Texture2D" uid="uid://b7whjrb5nsatm" path="res://assets/icon.svg" id="1_nh2m4"]
+[ext_resource type="Texture2D" uid="uid://crf8suk0nwsda" path="res://assets/ad-astra-minimal.png" id="2_abqhh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tcuxl"]
 height = 1.8
@@ -22,6 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 mesh = SubResource("CapsuleMesh_tcuxl")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=956700715]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2, 0)
 billboard = 1
-texture = ExtResource("1_nh2m4")
+texture = ExtResource("2_abqhh")

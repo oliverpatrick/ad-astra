@@ -37,13 +37,26 @@ func update_selection():
 func activate(option):
 	print(option)
 	match option:
-		"Campaign":
-			print("Start campaign")
-		"Matchmaking":
-			print("Matchmaking")
+		"Start":
+			_on_start_button_pressed()
+		"Scene Select":
+			print("Scene Select")
 		_:
 			print(option)
 
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_start_button_pressed() -> void:
+	print("Start pressed")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+
+func _on_scene_select_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_settings_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/settings_menu/settings_menu.tscn")
