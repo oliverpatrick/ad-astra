@@ -20,9 +20,12 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.2, 0.2, 0.2, 1)
 boot_splash/image="uid://crf8suk0nwsda"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
