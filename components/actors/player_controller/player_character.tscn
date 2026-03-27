@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dryr322uw5kht"]
+
+[ext_resource type="Script" uid="uid://b1vsc1nicqga6" path="res://components/actors/player_controller/player_controller.gd" id="1_3pc1m"]
+[ext_resource type="Script" uid="uid://ce8x6ifvs7bi1" path="res://components/actors/player_controller/input/input_handler.gd" id="2_frq6q"]
+[ext_resource type="Script" uid="uid://c4bnu10io1km0" path="res://components/actors/player_controller/humanoid.gd" id="3_0318e"]
+[ext_resource type="Script" uid="uid://bqw85bj16j0rq" path="res://components/actors/player_controller/states/state_machine.gd" id="4_frq6q"]
+[ext_resource type="Script" uid="uid://cbpcjpdfk317e" path="res://components/actors/player_controller/states/idle.gd" id="5_w36ga"]
+[ext_resource type="Script" uid="uid://diqpvqaywvnp" path="res://components/actors/player_controller/states/run.gd" id="6_vs177"]
+[ext_resource type="Script" uid="uid://bgp1ul02w3yra" path="res://components/cameras/camera_state_machine.gd" id="7_camsm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_frq6q"]
+radius = 0.3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vs177"]
+radius = 0.3
+
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=2074631134]
+script = ExtResource("1_3pc1m")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=1918440612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_frq6q")
+
+[node name="CameraMount" type="Node3D" parent="." unique_id=577157952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="PivotY" type="Node3D" parent="CameraMount" unique_id=190966758]
+
+[node name="PivotX" type="Node3D" parent="CameraMount/PivotY" unique_id=38524926]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraMount/PivotY/PivotX" unique_id=147502672]
+spring_length = 2.0
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="CameraMount/PivotY/PivotX/SpringArm3D" unique_id=1094898775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8264399)
+current = true
+
+[node name="FirstPersonCamera" type="Camera3D" parent="CameraMount/PivotY/PivotX" unique_id=1541610777]
+
+[node name="CamerStateMachine" type="Node" parent="CameraMount" unique_id=573638085]
+script = ExtResource("7_camsm")
+
+[node name="InputHandler" type="Node" parent="." unique_id=96867948]
+script = ExtResource("2_frq6q")
+
+[node name="Humanoid" type="Node3D" parent="." unique_id=506039912]
+script = ExtResource("3_0318e")
+
+[node name="StateMachine" type="Node" parent="Humanoid" unique_id=411488281]
+script = ExtResource("4_frq6q")
+
+[node name="Airborne" type="Node" parent="Humanoid/StateMachine" unique_id=51535997]
+
+[node name="Jump" type="Node" parent="Humanoid/StateMachine/Airborne" unique_id=1085208719]
+
+[node name="Freefall" type="Node" parent="Humanoid/StateMachine/Airborne" unique_id=781815382]
+
+[node name="Climbing" type="Node" parent="Humanoid/StateMachine" unique_id=348074475]
+
+[node name="Ledge" type="Node" parent="Humanoid/StateMachine/Climbing" unique_id=590760163]
+
+[node name="Grounded" type="Node" parent="Humanoid/StateMachine" unique_id=529199945]
+
+[node name="Idle" type="Node" parent="Humanoid/StateMachine/Grounded" unique_id=766365806]
+script = ExtResource("5_w36ga")
+
+[node name="Walk" type="Node" parent="Humanoid/StateMachine/Grounded" unique_id=598976433]
+
+[node name="Run" type="Node" parent="Humanoid/StateMachine/Grounded" unique_id=2040431680]
+script = ExtResource("6_vs177")
+
+[node name="Sprint" type="Node" parent="Humanoid/StateMachine/Grounded" unique_id=2074184721]
+
+[node name="Crouch" type="Node" parent="Humanoid/StateMachine/Grounded" unique_id=462518934]
+
+[node name="Mesh" type="Node3D" parent="." unique_id=1790890105]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh" unique_id=256048081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_vs177")

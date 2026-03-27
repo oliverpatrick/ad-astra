@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://pbvr26p5rf7"]
+
+[ext_resource type="Script" uid="uid://l4uwsmls1dy4" path="res://scenes/ui/lobby_menu/lobby_menu.gd" id="1_hvdr7"]
+
+[node name="LobbyMenu" type="Control" unique_id=1001261935]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_hvdr7")
+
+[node name="LeftContainer" type="HBoxContainer" parent="." unique_id=1186628405]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="LeftContainer" unique_id=1551496307]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Panel" type="Panel" parent="LeftContainer" unique_id=1281920050]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftUIContainer" type="VBoxContainer" parent="LeftContainer/Panel" unique_id=1846400760]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=701434699]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LeftContainer/Panel/LeftUIContainer/MarginContainer" unique_id=1411066901]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "[Scene Selection]"
+fit_content = true
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=1876783399]
+layout_mode = 2
+
+[node name="SwapLobbyButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/ButtonsContainer" unique_id=660226016]
+layout_mode = 2
+text = "Swap Lobby
+"
+alignment = 0
+
+[node name="SceneButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/ButtonsContainer" unique_id=1679396218]
+layout_mode = 2
+text = "Scene Selection: [Scene Name]"
+alignment = 0
+
+[node name="DifficultyButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/ButtonsContainer" unique_id=620348801]
+layout_mode = 2
+text = "Difficulty: [Difficulty]
+"
+alignment = 0
+
+[node name="StartGameButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/ButtonsContainer" unique_id=1023277831]
+layout_mode = 2
+text = "Start Game
+"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="LeftContainer/Panel/LeftUIContainer" unique_id=1501115462]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="LoadingTextContainer" type="MarginContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=785901014]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="LoadingText" type="RichTextLabel" parent="LeftContainer/Panel/LeftUIContainer/LoadingTextContainer" unique_id=672429310]
+layout_mode = 2
+text = "Loading... [Percentage]"
+fit_content = true
+
+[node name="Spacer" type="BoxContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=1133350790]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScenePreviewContainer" type="VBoxContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=2037757224]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.99
+
+[node name="TextureRect" type="TextureRect" parent="LeftContainer/Panel/LeftUIContainer/ScenePreviewContainer" unique_id=1017287215]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="LeftContainer/Panel/LeftUIContainer/ScenePreviewContainer" unique_id=1923000709]
+layout_mode = 2
+
+[node name="SceneSelectionNameContainer" type="MarginContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=1614699836]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="LeftContainer/Panel/LeftUIContainer/SceneSelectionNameContainer" unique_id=527450452]
+layout_mode = 2
+
+[node name="SceneNameAndDifficulty" type="RichTextLabel" parent="LeftContainer/Panel/LeftUIContainer/SceneSelectionNameContainer/VBoxContainer3" unique_id=2099107567]
+layout_mode = 2
+text = "[SceneName] on [Difficulty]"
+fit_content = true
+
+[node name="Checkpoint" type="RichTextLabel" parent="LeftContainer/Panel/LeftUIContainer/SceneSelectionNameContainer/VBoxContainer3" unique_id=1292529394]
+layout_mode = 2
+text = "at [Checkpoint]"
+fit_content = true
+
+[node name="Footer" type="Panel" parent="LeftContainer/Panel/LeftUIContainer" unique_id=674992]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftContainer/Panel/LeftUIContainer/Footer" unique_id=124027738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="HBoxContainer" parent="LeftContainer/Panel/LeftUIContainer/Footer/MarginContainer" unique_id=1409239677]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="SettingsButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/Footer/MarginContainer/VBoxContainer" unique_id=135569053]
+layout_mode = 2
+text = "Settings"
+
+[node name="SelectButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/Footer/MarginContainer/VBoxContainer" unique_id=702597214]
+layout_mode = 2
+text = "Select"
+
+[node name="BackToMainMenuButton" type="Button" parent="LeftContainer/Panel/LeftUIContainer/Footer/MarginContainer/VBoxContainer" unique_id=1934086624]
+layout_mode = 2
+text = "Back"
+
+[node name="Spacer2" type="BoxContainer" parent="LeftContainer/Panel/LeftUIContainer" unique_id=678768374]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.36
+
+[node name="RightContainer" type="HBoxContainer" parent="." unique_id=1243728936]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Modal" type="VBoxContainer" parent="." unique_id=2035529909]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderPanel" type="Panel" parent="Modal" unique_id=1824503886]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="BoxContainer" type="BoxContainer" parent="Modal/HeaderPanel" unique_id=721678915]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Modal/HeaderPanel/BoxContainer" unique_id=174028342]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
+text = "Scene Selection"
+fit_content = true
+vertical_alignment = 1
+
+[node name="MainPanel" type="Panel" parent="Modal" unique_id=1203530876]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Modal/MainPanel" unique_id=1731799576]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FooterPanel" type="Panel" parent="Modal" unique_id=1422588346]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="BoxContainer" type="HBoxContainer" parent="Modal/FooterPanel" unique_id=1651110749]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Modal/FooterPanel/BoxContainer" unique_id=653629445]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="SelectButton" type="Button" parent="Modal/FooterPanel/BoxContainer/VBoxContainer" unique_id=978361290]
+layout_mode = 2
+text = "Select"
+
+[node name="BackButton" type="Button" parent="Modal/FooterPanel/BoxContainer/VBoxContainer" unique_id=1627551423]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="LeftContainer/Panel/LeftUIContainer/ButtonsContainer/SceneButton" to="." method="_on_scene_button_pressed"]
+[connection signal="pressed" from="LeftContainer/Panel/LeftUIContainer/Footer/MarginContainer/VBoxContainer/BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
+[connection signal="pressed" from="Modal/FooterPanel/BoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
