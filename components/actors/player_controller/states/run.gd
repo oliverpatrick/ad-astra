@@ -28,7 +28,8 @@ func update(input: InputPackage, delta: float):
 func velocity_by_input(input: InputPackage, delta: float) -> Vector3:
 	var new_velocity = player.velocity
 	
-	var direction = (player.transform.basis * Vector3(input.input_direction.x, 0, input.input_direction.y)).normalized()
+	var direction = (input.camera_basis * Vector3(input.input_direction.x, 0, input.input_direction.y)).normalized()
+	direction.y = 0.0
 	new_velocity.x = direction.x * SPEED
 	new_velocity.z = direction.z * SPEED
 	
